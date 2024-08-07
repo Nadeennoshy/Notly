@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notly/widgets/note_item.dart';
 import 'package:notly/widgets/search_text_field.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -12,6 +13,8 @@ class HomeViewBody extends StatelessWidget {
         children: [
           SizedBox(height: 50,),
           SearchTextField(),
+          SizedBox(height: 20,),
+          NoteItem(),
         ],
       ),
     );
