@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notly/views/home_view.dart';
 
 class OnBoardingBody extends StatelessWidget {
   const OnBoardingBody({super.key});
@@ -55,7 +56,11 @@ class OnBoardingBody extends StatelessWidget {
               minimumSize: const Size(90, 50),
                 
             ),
-           onPressed: (){},
+           onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return const HomeView();
+            }));
+           },
            child: const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
