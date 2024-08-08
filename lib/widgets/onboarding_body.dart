@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notly/views/home_view.dart';
+import 'package:notly/widgets/get_started_button.dart';
 
 class OnBoardingBody extends StatelessWidget {
   const OnBoardingBody({super.key});
@@ -50,36 +51,9 @@ class OnBoardingBody extends StatelessWidget {
         const SizedBox(
           height: 40,
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 100),
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-              backgroundColor: const Color(0xffFF8383),
-              minimumSize: const Size(90, 50),
-            ),
-            onPressed: () {
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => const HomeView()));
-            },
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Get Started',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-                Icon(
-                  Icons.arrow_right_alt_sharp,
-                  color: Colors.white,
-                ),
-              ],
-            ),
-          ),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 100),
+          child: GetStartedButton(),
         ),
       ],
     );
