@@ -7,7 +7,7 @@ class AddNoteWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 152,
-      height: 199,
+      height: 150,
       decoration: BoxDecoration(
         color: Colors.lightGreen[200],
         borderRadius: BorderRadius.circular(10),

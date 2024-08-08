@@ -13,15 +13,15 @@ class NoteItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       child: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 8.0),
+        padding: EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children:[ Text('Health',style: TextStyle(fontWeight: FontWeight.bold),),]),
             SizedBox(height: 15,),
-            Text('kjhgfdszxfcgvhbjkl,.mnbvcxzaszdfgrtyhujikolkm,njmbhvgcfx'),
+            Text('kjhgfdszxfcgvhbjkl,.mnbvcxzaszdfgrtyh'),
             SizedBox(height: 20,),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
