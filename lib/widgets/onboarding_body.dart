@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:notly/views/home_view.dart';
 import 'package:notly/widgets/get_started_button.dart';
 
 class OnBoardingBody extends StatelessWidget {
