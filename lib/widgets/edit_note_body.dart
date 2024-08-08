@@ -3,8 +3,8 @@ import 'package:notly/widgets/colors_list_view.dart';
 import 'package:notly/widgets/custom_button.dart';
 import 'package:notly/widgets/custom_text_field.dart';
 
-class AddNoteBody extends StatelessWidget {
-  const AddNoteBody({super.key});
+class EditNoteBody extends StatelessWidget {
+  const EditNoteBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class AddNoteBody extends StatelessWidget {
          child: ListView(
           children: const [
             SizedBox(height: 10,),
-            Text('Add Note',
+            Text('Edit Note',
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Color(0xffFF8383),
@@ -27,7 +27,7 @@ class AddNoteBody extends StatelessWidget {
             SizedBox(height: 20,),
             ColorsListView(),
             SizedBox(height: 30,),
-            CustomButton(buttonName: 'Add',),
+            CustomButton(buttonName: 'Edit',),
 
           ],
          ),
