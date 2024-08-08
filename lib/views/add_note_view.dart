@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notly/widgets/color_item.dart';
+import 'package:notly/widgets/colors_list_view.dart';
 
 class AddNoteView extends StatelessWidget {
   const AddNoteView({super.key});
@@ -12,7 +13,7 @@ class AddNoteView extends StatelessWidget {
          child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ColorItem(),
+            ColorsListView(),
           ],
          ),
        ),

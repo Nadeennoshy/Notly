@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ColorItem extends StatelessWidget {
-  const ColorItem({super.key});
+  const ColorItem({super.key,required this.color});
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +10,7 @@ class ColorItem extends StatelessWidget {
       width: 55,
       height: 55,
       decoration: BoxDecoration(
-        color: Colors.lightGreen[200],
+        color: color,
         borderRadius: BorderRadius.circular(16),
       ),
     );
