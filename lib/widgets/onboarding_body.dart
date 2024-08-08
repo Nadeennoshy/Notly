@@ -11,67 +11,87 @@ class OnBoardingBody extends StatelessWidget {
         Stack(
           alignment: Alignment.centerRight,
           children: [
-            Image.asset('assets/images/Wall Polygon.png'),
+            Container(
+              child: Image.asset(
+                'assets/images/Wall Polygon.png',
+                fit: BoxFit.fill,
+                width: double.infinity,
+                height: 400,
+              ),
+            ),
             Positioned(
-              top: 80,
-              right: 80,
+              top: 140,
+              right: 90,
               child: Image.asset(
                 'assets/images/onBoarding.png',
+                fit: BoxFit.fill,
+                height: 270,
               ),
             ),
           ],
         ),
         const SizedBox(
-          height: 20,
-        ),
-        const Center(
-          child: Text(
-            'Create free notes & collaborate',
-            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
-          ),
+          height: 40,
         ),
         const Text(
-          'with your team',
+          'Create free notes & collaborate with your team',
+          textAlign: TextAlign.center,
+          style: TextStyle(   
+            fontWeight: FontWeight.w600, fontSize: 20),
+        ),
+        // const Text(
+        //   'with your team',
+        //   style: TextStyle(
+        //     fontWeight: FontWeight.w600,
+        //     fontSize: 20,
+        //   ),
+        // ),
+        const SizedBox(
+          height: 15,
+        ),
+        Text(
+          'Start organizing your life and unleashing\n your creativity with Notly App',
+          textAlign: TextAlign.center,
           style: TextStyle(
-            fontWeight: FontWeight.w600,
-            fontSize: 20,
+            color: Colors.black.withOpacity(0.6),
+            fontWeight: FontWeight.w400,
           ),
         ),
-        const SizedBox(height: 15,),
-        const Center(
-          child: Text(
-            'Start organizing your life and unleashing ',
-          ),
+        // const Text('your creativity with Notly App'),
+        const SizedBox(
+          height: 40,
         ),
-        const Text('your creativity with Notly App'),
-        const SizedBox(height: 40,),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 100),
           child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0),
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                backgroundColor: const Color(0xffFF8383),
+                minimumSize: const Size(90, 50),
               ),
-              backgroundColor: const Color(0xffFF8383),
-              minimumSize: const Size(90, 50),
-                
-            ),
-           onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return const HomeView();
-            }));
-           },
-           child: const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Get Started',
-              style: TextStyle(
-                color: Colors.white,
-              ),
-              ),
-              Icon(Icons.arrow_right_alt_sharp,color: Colors.white,)
-            ],
-           )),
+              onPressed: () {
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const HomeView()));
+                // Navigator.push(context, MaterialPageRoute(builder: (context) {
+                //   return const HomeView();
+                // }));
+              },
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Get Started',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  Icon(
+                    Icons.arrow_right_alt_sharp,
+                    color: Colors.white,
+                  )
+                ],
+              )),
         )
       ],
     );
