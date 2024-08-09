@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+const kNotesBox = 'notes_box';
 const kColors = [
   Color(0xffffadad),
   Color(0xffffd6a5),
