@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:notly/cubits/add_note/add_note_cubit.dart';
 import 'package:notly/models/note_model.dart';
 import 'package:notly/widgets/colors_list_view.dart';
@@ -70,9 +71,12 @@ class _AddNoteFormState extends State<AddNoteForm> {
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
+                    DateTime date = DateTime.now();
+                      String formattedDate =
+                          DateFormat('dd MMM').format(date);
                     NoteModel note = NoteModel(
                         color: Colors.blue.value,
-                        date: DateTime.now().day.toString(),
+                        date: formattedDate,
                         subTitle: subTitle!,
                         title: title!);
                     BlocProvider.of<AddNoteCubit>(context).addNote(note);
