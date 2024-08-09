@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notly/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notly/models/note_model.dart';
 import 'package:notly/views/edit_note_view.dart';
 
@@ -39,7 +41,10 @@ class NoteItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(note.date),
-                    IconButton(onPressed: (){}, icon: const Icon(Icons.delete,color: Colors.red,)),
+                    IconButton(onPressed: (){
+                      note.delete();
+                      BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+                    }, icon: const Icon(Icons.delete,color: Colors.red,)),
           
                   ],
                 ),
