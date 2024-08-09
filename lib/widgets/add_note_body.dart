@@ -17,8 +17,12 @@ class AddNoteBody extends StatelessWidget {
             if(state is AddNoteFailure){
               print(state.errorMsg);
             }if(state is AddNoteSuccess){
-              print('Success');
-              Navigator.pop(context);
+              showDialog(context: context, builder: (context){
+                return AlertDialog(
+                  content: Text('Added Successfully'),
+                );
+              });
+              // Navigator.pop(context);
             }
           },
           builder: (context, state) {
