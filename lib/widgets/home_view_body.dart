@@ -19,8 +19,8 @@ class HomeViewBody extends StatelessWidget {
               itemCount: 10,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                mainAxisSpacing: 10,
-                crossAxisSpacing: 10),
+                mainAxisSpacing: 20,
+                crossAxisSpacing: 15),
               itemBuilder: (context,index){
                 if(index == 0){
                   return const AddNoteWidget();
