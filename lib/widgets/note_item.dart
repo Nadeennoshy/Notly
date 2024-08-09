@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:notly/models/note_model.dart';
 import 'package:notly/views/edit_note_view.dart';
 
 class NoteItem extends StatelessWidget {
-  const NoteItem({super.key});
+  const NoteItem({super.key,required this.note});
+  final NoteModel note;
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +23,14 @@ class NoteItem extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 8.0),
           child: Column(
             children: [
-              const ListTile(
+              ListTile(
                 contentPadding: EdgeInsets.zero,
-                  title: Text('Health',
-                  style: TextStyle(
+                  title: Text(note.title,
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                   ),),
-                  subtitle: Text('note desription for note one',
-                  style: TextStyle(
+                  subtitle: Text(note.subTitle,
+                  style: const TextStyle(
                     fontSize: 16,
                   ),),
                   
@@ -36,7 +38,7 @@ class NoteItem extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text('20 May'),
+                    Text(note.date),
                     IconButton(onPressed: (){}, icon: const Icon(Icons.delete,color: Colors.red,)),
           
                   ],

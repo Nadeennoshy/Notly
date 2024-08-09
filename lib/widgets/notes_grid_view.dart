@@ -9,7 +9,7 @@ class NotesGridView extends StatelessWidget {
   const NotesGridView({
     super.key,
   });
-
+  
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<NotesCubit, NotesState>(
@@ -24,7 +24,7 @@ class NotesGridView extends StatelessWidget {
             if (index == 0) {
               return const AddNoteWidget();
             } else {
-              return const NoteItem();
+              return NoteItem(note: notes[index],);
             }
           },
         );
