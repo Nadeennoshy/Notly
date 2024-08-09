@@ -1,11 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notly/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notly/widgets/add_note_widget.dart';
 import 'package:notly/widgets/note_item.dart';
+import 'package:notly/widgets/notes_grid_view.dart';
 import 'package:notly/widgets/search_text_field.dart';
 
-class HomeViewBody extends StatelessWidget {
+class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
 
+  @override
+  State<HomeViewBody> createState() => _HomeViewBodyState();
+}
+
+class _HomeViewBodyState extends State<HomeViewBody> {
+
+  @override
+  void initState(){
+    super.initState();
+    BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+  }
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,23 +29,11 @@ class HomeViewBody extends StatelessWidget {
           const SizedBox(height: 50,),
           const SearchTextField(),
           Expanded(
-            child: GridView.builder(
-              itemCount: 10,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 20,
-                crossAxisSpacing: 15),
-              itemBuilder: (context,index){
-                if(index == 0){
-                  return const AddNoteWidget();
-                }else{
-                  return const NoteItem();
-                }
-                
-              },),
+            child: NotesGridView(),
           )
         ],
       ),
     );
   }
 }
+
