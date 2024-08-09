@@ -11,23 +11,33 @@ class EditNoteBody extends StatelessWidget {
     return Padding(
          padding: const EdgeInsets.all(16.0),
          child: ListView(
-          children: const [
-            SizedBox(height: 10,),
-            Text('Edit Note',
+          children: [
+            const SizedBox(height: 10,),
+            const Text('Edit Note',
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Color(0xffFF8383),
               fontSize: 24,
               fontWeight: FontWeight.bold,
             ),),
-            SizedBox(height: 30,),
-            CustomTextField(hintText: 'Enter Title'),
-            SizedBox(height: 15,),
-            CustomTextField(hintText: 'Details',maxLines: 6,),
-            SizedBox(height: 20,),
-            ColorsListView(),
-            SizedBox(height: 30,),
-            CustomButton(buttonName: 'Edit',),
+            const SizedBox(height: 30,),
+          CustomTextField(
+            name: 'title',
+            onSaved: (value){
+
+            },    
+              hintText: 'Enter Title'),
+            const SizedBox(height: 15,),
+            CustomTextField(
+              name: 'details',
+              onSaved: (value){
+
+              },
+              hintText: 'Details',maxLines: 6,),
+            const SizedBox(height: 20,),
+            const ColorsListView(),
+            const SizedBox(height: 30,),
+            CustomButton(buttonName: 'Edit',onPressed: (){},),
 
           ],
          ),

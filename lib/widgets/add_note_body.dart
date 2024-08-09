@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notly/cubits/add_note/add_note_cubit.dart';
-import 'package:notly/widgets/colors_list_view.dart';
-import 'package:notly/widgets/custom_button.dart';
-import 'package:notly/widgets/custom_text_field.dart';
+import 'package:notly/widgets/add_note_form.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AddNoteBody extends StatelessWidget {
@@ -16,52 +14,15 @@ class AddNoteBody extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: BlocConsumer<AddNoteCubit, AddNoteState>(
           listener: (context, state) {
-            if(state is AddNoteSuccess){
-              showDialog(context: context, builder: (context){
-                return const AlertDialog();
-              });
-            }else if(state is AddNoteFailure){
-
+            if(state is AddNoteFailure){
+              print(state.errorMsg);
+            }if(state is AddNoteSuccess){
+              print('Success');
+              Navigator.pop(context);
             }
           },
           builder: (context, state) {
-            return ListView(
-              children: [
-                const SizedBox(
-                  height: 10,
-                ),
-                const Text(
-                  'Add Note',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Color(0xffFF8383),
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-                const CustomTextField(hintText: 'Enter Title'),
-                const SizedBox(
-                  height: 15,
-                ),
-                const CustomTextField(
-                  hintText: 'Details',
-                  maxLines: 6,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const ColorsListView(),
-                const SizedBox(
-                  height: 30,
-                ),
-                state is AddNoteLoading? const CircularProgressIndicator(): const CustomButton(
-                  buttonName: 'Add',
-                ),
-              ],
-            );
+            return const AddNoteForm();
           },
         ),
       ),
