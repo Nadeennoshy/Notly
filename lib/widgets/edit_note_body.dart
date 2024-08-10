@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notly/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notly/models/note_model.dart';
-import 'package:notly/widgets/colors_list_view.dart';
 import 'package:notly/widgets/custom_button.dart';
 import 'package:notly/widgets/custom_text_field.dart';
 import 'package:notly/widgets/edit_note_colors_listview.dart';

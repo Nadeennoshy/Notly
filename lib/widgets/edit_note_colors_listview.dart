@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notly/constants.dart';
-import 'package:notly/cubits/add_note/add_note_cubit.dart';
 import 'package:notly/models/note_model.dart';
 import 'package:notly/widgets/color_item.dart';
 
