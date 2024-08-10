@@ -5,6 +5,7 @@ import 'package:notly/models/note_model.dart';
 import 'package:notly/widgets/colors_list_view.dart';
 import 'package:notly/widgets/custom_button.dart';
 import 'package:notly/widgets/custom_text_field.dart';
+import 'package:notly/widgets/edit_note_colors_listview.dart';
 
 class EditNoteBody extends StatefulWidget {
   const EditNoteBody({super.key,required this.note});
@@ -45,7 +46,7 @@ class _EditNoteBodyState extends State<EditNoteBody> {
               name: 'details',
               hintText: widget.note.subTitle,maxLines: 6,),
             const SizedBox(height: 20,),
-            const ColorsListView(),
+            EditNoteColorsListview(note: widget.note),
             const SizedBox(height: 30,),
             CustomButton(buttonName: 'Edit',onPressed: (){
               widget.note.title = title??widget.note.title;
