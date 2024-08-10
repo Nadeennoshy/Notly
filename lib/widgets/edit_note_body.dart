@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notly/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notly/models/note_model.dart';
+import 'package:notly/views/home_view.dart';
 import 'package:notly/widgets/custom_button.dart';
 import 'package:notly/widgets/custom_text_field.dart';
 import 'package:notly/widgets/edit_note_colors_listview.dart';
+import 'package:notly/widgets/show_add_dialog.dart';
 
 class EditNoteBody extends StatefulWidget {
   const EditNoteBody({super.key,required this.note});
@@ -51,7 +53,13 @@ class _EditNoteBodyState extends State<EditNoteBody> {
               widget.note.title = title??widget.note.title;
               widget.note.subTitle = subTitle??widget.note.subTitle;
               widget.note.save();
+              showAddDialog(context,'assets/images/success icon component.png','Updated Successfully',Colors.green, Colors.green, 'OK!', (){
+                Navigator.push(context,MaterialPageRoute(builder: (context){
+                        return const HomeView();
+                      }));
+              });
               BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+
             },),
 
           ],

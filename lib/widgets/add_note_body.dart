@@ -5,7 +5,7 @@ import 'package:notly/views/add_note_view.dart';
 import 'package:notly/views/home_view.dart';
 import 'package:notly/widgets/add_note_form.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:notly/widgets/show_success_dialog.dart';
+import 'package:notly/widgets/show_add_dialog.dart';
 
 class AddNoteBody extends StatelessWidget {
   const AddNoteBody({super.key});
@@ -19,13 +19,13 @@ class AddNoteBody extends StatelessWidget {
         child: BlocConsumer<AddNoteCubit, AddNoteState>(
           listener: (context, state) {
             if(state is AddNoteFailure){
-              showAddDialog(context, Colors.red, Colors.black, 'Try again..', (){
-                Navigator.push(context, MaterialPageRoute(builder: (context){
+              showAddDialog(context,'assets/images/x-circle.png','oops! wrong' ,Colors.red, Colors.black, 'Try again..', (){
+                Navigator.push(context,MaterialPageRoute(builder: (context){
                         return const AddNoteView();
                       }));
               });
             }if(state is AddNoteSuccess){
-              showAddDialog(context,Colors.green,Colors.green,'Done!',
+              showAddDialog(context,'assets/images/success icon component.png','Added Successfully',Colors.green,Colors.green,'Done!',
               (){
                  Navigator.push(context, MaterialPageRoute(builder: (context){
                         return const HomeView();
