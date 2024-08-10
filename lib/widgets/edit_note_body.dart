@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:notly/models/note_model.dart';
 import 'package:notly/widgets/colors_list_view.dart';
 import 'package:notly/widgets/custom_button.dart';
 import 'package:notly/widgets/custom_text_field.dart';
 
 class EditNoteBody extends StatelessWidget {
-  const EditNoteBody({super.key});
+  const EditNoteBody({super.key,required this.note});
+  final NoteModel note;
 
   @override
   Widget build(BuildContext context) {

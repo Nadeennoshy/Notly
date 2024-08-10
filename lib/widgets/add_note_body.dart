@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notly/cubits/add_note/add_note_cubit.dart';
+import 'package:notly/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notly/widgets/add_note_form.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -22,6 +23,7 @@ class AddNoteBody extends StatelessWidget {
                   content: Text('Added Successfully'),
                 );
               });
+              BlocProvider.of<NotesCubit>(context).fetchAllNotes();
               // Navigator.pop(context);
             }
           },
