@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notly/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notly/models/note_model.dart';
 import 'package:notly/widgets/colors_list_view.dart';
 import 'package:notly/widgets/custom_button.dart';
 import 'package:notly/widgets/custom_text_field.dart';
 
-class EditNoteBody extends StatelessWidget {
+class EditNoteBody extends StatefulWidget {
   const EditNoteBody({super.key,required this.note});
   final NoteModel note;
 
+  @override
+  State<EditNoteBody> createState() => _EditNoteBodyState();
+}
+
+class _EditNoteBodyState extends State<EditNoteBody> {
+  String? title,subTitle;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,22 +32,27 @@ class EditNoteBody extends StatelessWidget {
             ),),
             const SizedBox(height: 30,),
           CustomTextField(
+            onChanged: (value){
+              title = value;
+            },
             name: 'title',
-            onSaved: (value){
-
-            },    
-              hintText: 'Enter Title'),
+              hintText: widget.note.title),
             const SizedBox(height: 15,),
             CustomTextField(
-              name: 'details',
-              onSaved: (value){
-
+              onChanged: (value){
+                subTitle = value;
               },
-              hintText: 'Details',maxLines: 6,),
+              name: 'details',
+              hintText: widget.note.subTitle,maxLines: 6,),
             const SizedBox(height: 20,),
             const ColorsListView(),
             const SizedBox(height: 30,),
-            CustomButton(buttonName: 'Edit',onPressed: (){},),
+            CustomButton(buttonName: 'Edit',onPressed: (){
+              widget.note.title = title??widget.note.title;
+              widget.note.subTitle = subTitle??widget.note.subTitle;
+              widget.note.save();
+              BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+            },),
 
           ],
          ),
