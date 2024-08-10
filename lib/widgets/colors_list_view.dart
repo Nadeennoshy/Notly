@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:notly/constants.dart';
 import 'package:notly/widgets/color_item.dart';
 
-class ColorsListView extends StatelessWidget {
+class ColorsListView extends StatefulWidget {
   const ColorsListView({super.key});
 
+  @override
+  State<ColorsListView> createState() => _ColorsListViewState();
+}
+
+class _ColorsListViewState extends State<ColorsListView> {
+  int currentIndex=0;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -16,7 +22,17 @@ class ColorsListView extends StatelessWidget {
         itemBuilder: (context,index){
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: ColorItem(color: kColors[index],),
+          child: GestureDetector(
+            onTap: (){
+              currentIndex=index;
+              setState(() {
+                
+              });
+            },
+            child: ColorItem(
+              isActive: currentIndex==index?true:false,
+              color: kColors[index],),
+          ),
         );
       }),
     );
