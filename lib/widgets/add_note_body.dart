@@ -19,14 +19,14 @@ class AddNoteBody extends StatelessWidget {
         child: BlocConsumer<AddNoteCubit, AddNoteState>(
           listener: (context, state) {
             if(state is AddNoteFailure){
-              showAddDialog(context,'assets/images/x-circle.png','oops! wrong' ,Colors.red, Colors.black, 'Try again..', (){
+              showAddDialog(context,img:'assets/images/x-circle.png',title: 'oops! wrong' ,buttonColor:Colors.red, textColor: Colors.black, buttonText:'Try again..',onPressed: (){
                 Navigator.push(context,MaterialPageRoute(builder: (context){
                         return const AddNoteView();
                       }));
               });
             }if(state is AddNoteSuccess){
-              showAddDialog(context,'assets/images/success icon component.png','Added Successfully',Colors.green,Colors.green,'Done!',
-              (){
+              showAddDialog(context,img: 'assets/images/success icon component.png',title:'Success',textColor:Colors.green,buttonColor:Colors.green,buttonText: 'Done!',
+              onPressed: (){
                  Navigator.push(context, MaterialPageRoute(builder: (context){
                         return const HomeView();
                       }));
