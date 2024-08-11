@@ -53,7 +53,7 @@ class _EditNoteBodyState extends State<EditNoteBody> {
               widget.note.title = title??widget.note.title;
               widget.note.subTitle = subTitle??widget.note.subTitle;
               widget.note.save();
-              showAddDialog(context,img:'assets/images/success icon component.png',title: 'Updated Successfully',buttonColor: Colors.green, textColor: Colors.green, buttonText: 'OK!', onPressed: (){
+              showAddDialog(context,content:'your note is updated',img:'assets/images/success icon component.png',title: 'Updated Successfully',buttonColor: Colors.green, textColor: Colors.green, buttonText: 'OK!', onPressed: (){
                 Navigator.push(context,MaterialPageRoute(builder: (context){
                         return const HomeView();
                       }));
