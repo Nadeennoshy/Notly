@@ -12,16 +12,15 @@ class SearchGridView extends StatelessWidget {
     return BlocBuilder<NotesCubit, NotesState>(
       builder: (context, state) {
         List<NoteModel> filteredNoteList =
-              BlocProvider.of<NotesCubit>(context).filteredNoteList!;
+            BlocProvider.of<NotesCubit>(context).filteredNoteList!;
         return GridView.builder(
           itemCount: filteredNoteList.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2, mainAxisSpacing: 20, crossAxisSpacing: 15),
           itemBuilder: (context, index) {
-              return NoteItem(
-                note: filteredNoteList[index],
-              );
-            
+            return NoteItem(
+              note: filteredNoteList[index],
+            );
           },
         );
       },

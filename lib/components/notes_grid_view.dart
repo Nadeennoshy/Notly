@@ -8,19 +8,19 @@ class NotesGridView extends StatelessWidget {
   const NotesGridView({
     super.key,
   });
-  
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<NotesCubit, NotesState>(
       builder: (context, state) {
-      List<NoteModel> notes = BlocProvider.of<NotesCubit>(context).notes!;
+        List<NoteModel> notes = BlocProvider.of<NotesCubit>(context).notes!;
 
         return GridView.builder(
           itemCount: notes.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2, mainAxisSpacing: 20, crossAxisSpacing: 15),
           itemBuilder: (context, index) {
-            return NoteItem(note:notes[index]);
+            return NoteItem(note: notes[index]);
           },
         );
       },

@@ -42,7 +42,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             height: 30,
           ),
           CustomTextField(
-            name: 'title',
+              name: 'title',
               onSaved: (value) {
                 title = value;
               },
@@ -68,13 +68,12 @@ class _AddNoteFormState extends State<AddNoteForm> {
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return CustomButton(
-                isLoading: state is AddNoteLoading?true:false,
+                isLoading: state is AddNoteLoading ? true : false,
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
                     DateTime date = DateTime.now();
-                      String formattedDate =
-                          DateFormat('dd MMM').format(date);
+                    String formattedDate = DateFormat('dd MMM').format(date);
                     NoteModel note = NoteModel(
                         color: Colors.blue.value,
                         date: formattedDate,

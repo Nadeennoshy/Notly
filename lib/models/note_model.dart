@@ -1,10 +1,9 @@
-
-
 import 'package:hive_flutter/hive_flutter.dart';
 
 part 'note_model.g.dart';
+
 @HiveType(typeId: 0)
-class NoteModel extends HiveObject{
+class NoteModel extends HiveObject {
   @HiveField(0)
   String title;
 
@@ -17,5 +16,9 @@ class NoteModel extends HiveObject{
   @HiveField(3)
   int color;
 
-  NoteModel({required this.color,required this.date,required this.subTitle,required this.title});
+  NoteModel(
+      {required this.color,
+      required this.date,
+      required this.subTitle,
+      required this.title});
 }

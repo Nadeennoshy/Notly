@@ -7,8 +7,8 @@ class AddNoteWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context){
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) {
           return const AddNoteView();
         }));
       },
@@ -29,9 +29,10 @@ class AddNoteWidget extends StatelessWidget {
                 Text('Add New'),
               ],
             ),
-            const SizedBox(height: 10,),
+            const SizedBox(
+              height: 10,
+            ),
             Image.asset('assets/images/add note.png'),
-      
           ],
         ),
       ),

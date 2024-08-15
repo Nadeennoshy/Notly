@@ -18,18 +18,30 @@ class AddNoteBody extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: BlocConsumer<AddNoteCubit, AddNoteState>(
           listener: (context, state) {
-            if(state is AddNoteFailure){
-              showAddDialog(context,content:'There was an error',img:'assets/images/x-circle.png',title: 'oops! wrong' ,buttonColor:Colors.red, textColor: Colors.black, buttonText:'Try again..',onPressed: (){
-                Navigator.push(context,MaterialPageRoute(builder: (context){
-                        return const AddNoteView();
-                      }));
+            if (state is AddNoteFailure) {
+              showAddDialog(context,
+                  content: 'There was an error',
+                  img: 'assets/images/x-circle.png',
+                  title: 'oops! wrong',
+                  buttonColor: Colors.red,
+                  textColor: Colors.black,
+                  buttonText: 'Try again..', onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const AddNoteView();
+                }));
               });
-            }if(state is AddNoteSuccess){
-              showAddDialog(context,content:'your note is added successfully',img: 'assets/images/success icon component.png',title:'Success',textColor:Colors.green,buttonColor:Colors.green,buttonText: 'Done!',
-              onPressed: (){
-                 Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return const HomeView();
-                      }));
+            }
+            if (state is AddNoteSuccess) {
+              showAddDialog(context,
+                  content: 'your note is added successfully',
+                  img: 'assets/images/success icon component.png',
+                  title: 'Success',
+                  textColor: Colors.green,
+                  buttonColor: Colors.green,
+                  buttonText: 'Done!', onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const HomeView();
+                }));
               });
               BlocProvider.of<NotesCubit>(context).fetchAllNotes();
             }
@@ -41,5 +53,4 @@ class AddNoteBody extends StatelessWidget {
       ),
     );
   }
-
 }

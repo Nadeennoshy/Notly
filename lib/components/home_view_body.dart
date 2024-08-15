@@ -12,19 +12,21 @@ class HomeViewBody extends StatefulWidget {
 }
 
 class _HomeViewBodyState extends State<HomeViewBody> {
-
   @override
-  void initState(){
+  void initState() {
     super.initState();
     BlocProvider.of<NotesCubit>(context).fetchAllNotes();
   }
+
   @override
   Widget build(BuildContext context) {
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.0),
       child: Column(
         children: [
-          SizedBox(height: 50,),
+          SizedBox(
+            height: 50,
+          ),
           AddNoteWidget(),
           Expanded(
             child: NotesGridView(),
@@ -34,4 +36,3 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     );
   }
 }
-

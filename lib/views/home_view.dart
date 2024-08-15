@@ -9,14 +9,18 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.lightGreen[200],
-        child: const Icon(Icons.search,color: Colors.white,size: 30,),
-        onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context){
-            return SearchView();
-          }));
-        }),
-      body:  const HomeViewBody(),
-      );
+          backgroundColor: Colors.lightGreen[200],
+          child: const Icon(
+            Icons.search,
+            color: Colors.white,
+            size: 30,
+          ),
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return const SearchView();
+            }));
+          }),
+      body: const HomeViewBody(),
+    );
   }
 }

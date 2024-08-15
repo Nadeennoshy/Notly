@@ -18,8 +18,8 @@ class GetStartedButton extends StatelessWidget {
         minimumSize: const Size(90, 50),
       ),
       onPressed: () {
-        Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => const HomeView()));
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => const HomeView()));
       },
       child: const Row(
         mainAxisAlignment: MainAxisAlignment.center,

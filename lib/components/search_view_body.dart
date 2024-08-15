@@ -12,30 +12,23 @@ class SearchViewBody extends StatefulWidget {
 }
 
 class _SearchViewBodyState extends State<SearchViewBody> {
-   String? keyword;
-
-  // @override
-  // void initState() {
-  //   BlocProvider.of<NotesCubit>(context).filteredNoteList =
-  //       BlocProvider.of<NotesCubit>(context).notes;
-  //   super.initState();
-  // }
-  
+  String? keyword;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Column(
         children: [
-          SizedBox(height: 50,),
-          SearchTextField(
-             onChanged: (value) {
-                keyword = value;
-                BlocProvider.of<NotesCubit>(context)
-                    .searchForNote(keyword ?? "");
-              },
+          const SizedBox(
+            height: 50,
           ),
-          Expanded(child: SearchGridView()),
+          SearchTextField(
+            onChanged: (value) {
+              keyword = value;
+              BlocProvider.of<NotesCubit>(context).searchForNote(keyword ?? "");
+            },
+          ),
+          const Expanded(child: SearchGridView()),
         ],
       ),
     );
