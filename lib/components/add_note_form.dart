@@ -1,9 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:notly/constants.dart';
 import 'package:notly/cubits/add_note/add_note_cubit.dart';
 import 'package:notly/models/note_model.dart';
-import 'package:notly/widgets/colors_list_view.dart';
+import 'package:notly/components/colors_list_view.dart';
 import 'package:notly/widgets/custom_button.dart';
 import 'package:notly/widgets/custom_text_field.dart';
 
@@ -32,7 +33,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             'Add Note',
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Color(0xffFF8383),
+              color: kPrimaryColor,
               fontSize: 24,
               fontWeight: FontWeight.bold,
             ),

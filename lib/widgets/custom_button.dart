@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notly/constants.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({super.key,required this.buttonName,required this.onPressed,this.isLoading=false});
@@ -11,7 +12,7 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         minimumSize: const Size(double.infinity, 50),
-        backgroundColor: const Color(0xffFF8383),
+        backgroundColor: kPrimaryColor,
          shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(10.0), // Set the border radius
     ),

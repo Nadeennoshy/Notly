@@ -3,7 +3,7 @@ import 'package:notly/cubits/add_note/add_note_cubit.dart';
 import 'package:notly/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notly/views/add_note_view.dart';
 import 'package:notly/views/home_view.dart';
-import 'package:notly/widgets/add_note_form.dart';
+import 'package:notly/components/add_note_form.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notly/widgets/show_add_dialog.dart';
 

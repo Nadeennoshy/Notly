@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notly/constants.dart';
 import 'package:notly/views/home_view.dart';
 
 class GetStartedButton extends StatelessWidget {
@@ -13,7 +14,7 @@ class GetStartedButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
         ),
-        backgroundColor: const Color(0xffFF8383),
+        backgroundColor: kPrimaryColor,
         minimumSize: const Size(90, 50),
       ),
       onPressed: () {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notly/cubits/notes_cubit/notes_cubit.dart';
-import 'package:notly/widgets/search_grid_view.dart';
+import 'package:notly/components/search_grid_view.dart';
 import 'package:notly/widgets/search_text_field.dart';
 
 class SearchViewBody extends StatefulWidget {

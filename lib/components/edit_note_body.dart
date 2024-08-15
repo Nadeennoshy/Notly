@@ -5,7 +5,7 @@ import 'package:notly/models/note_model.dart';
 import 'package:notly/views/home_view.dart';
 import 'package:notly/widgets/custom_button.dart';
 import 'package:notly/widgets/custom_text_field.dart';
-import 'package:notly/widgets/edit_note_colors_listview.dart';
+import 'package:notly/components/edit_note_colors_listview.dart';
 import 'package:notly/widgets/show_add_dialog.dart';
 
 class EditNoteBody extends StatefulWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notly/widgets/add_note_body.dart';
+import 'package:notly/components/add_note_body.dart';
 
 
 class AddNoteView extends StatelessWidget {

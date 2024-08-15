@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notly/widgets/onboarding_body.dart';
+import 'package:notly/components/onboarding_body.dart';
 
 class OnBoardingView extends StatelessWidget {
   const OnBoardingView({super.key});
