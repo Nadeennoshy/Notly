@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notly/cubits/notes_cubit/notes_cubit.dart';
+import 'package:notly/widgets/add_note_widget.dart';
 import 'package:notly/widgets/notes_grid_view.dart';
-import 'package:notly/widgets/search_text_field.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
@@ -20,12 +20,12 @@ class _HomeViewBodyState extends State<HomeViewBody> {
   }
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16.0),
       child: Column(
         children: [
-          const SizedBox(height: 50,),
-          const SearchTextField(),
+          SizedBox(height: 50,),
+          AddNoteWidget(),
           Expanded(
             child: NotesGridView(),
           )
